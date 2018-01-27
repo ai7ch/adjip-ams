@@ -1,0 +1,3 @@
+djib_list:
+    path:     /admin/djib/
+    defaults: { _controller: ManagerBundle:Default:index }
