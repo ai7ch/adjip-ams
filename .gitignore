@@ -1,6 +1,7 @@
 #MINES
 UPGRADE*
 LICENSE
+.phpintel/*
 
 #DEFAULT SYM
 /web/bundles/
