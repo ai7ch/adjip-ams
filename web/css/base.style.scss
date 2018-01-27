@@ -1,0 +1,38 @@
+/* 
+	App: 		AMS ADjip Adherent Management System
+	Ver: 		0.1
+	Author: 	Houmed AHMED
+	License: 	ADjiP Copyright
+*/
+
+/* Helper Classes */
+	.margin-off {
+		margin: 0 !important;
+	}
+	.col-padding-left-off {
+		padding-left : 5px !important;
+	}
+	.col-padding-right-off {
+		padding-right: 5px !important;
+	}
+	.radio-group label {
+		margin: 0 5px;
+	}
+	.vertical-spacing {
+		margin: 10px;
+		overflow: hidden;
+		width: 100%;
+	}
+	.form-error-msg {
+		color: #000 !important;
+		font-size: 15px;
+	}
+	.group-margin-off{
+		margin: 0 !important;
+	}
+
+/* BOOTSTRAP OVERRIDES */
+
+	.has-error label {
+		color: #ff4136;
+	}
