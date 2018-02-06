@@ -1,0 +1,161 @@
+{% extends 'base.template.html.twig' %}
+{% block title %}Adding New Djiboutian{% endblock %}
+{% block pageHeader %}Add new{% endblock %}
+{% block body %}
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Formulaire d'enrégistrement
+			</div>
+			<div class="panel-body">
+				<div class="row margin-off">	
+					<div class="col-md-3">
+						{{form_start(form, {"attr" : {novalidate : "novalidate" }})}}
+							{% if form_errors(form.firstName) %}
+							<div class="form-group has-error">
+							{% else %}
+							<div class="form-group">
+							{% endif %}
+								{{form_label(form.firstName,"Prénom :")}}
+								{{form_widget(form.firstName, {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							{% if form_errors(form.lastName) %}
+							<div class="form-group has-error">	
+							{% else %}
+							<div class="form-group">
+							{% endif %}
+								{{form_label(form.lastName , "Nom :")}}
+								{{form_widget(form.lastName , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							<div class="form-group">
+								{{form_label(form.surname , "Surnom :")}}
+								{{form_widget(form.surname , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							{% if form_errors(form.gender) %}
+							<div class="form-group has-error">
+							{% else %}
+							<div class="form-group">
+							{% endif %}
+								{{form_label(form.gender , "Sexe :")}}
+								{{form_widget(form.gender , {"attr" : {
+									"class" : "radio-group"
+								}})}}
+							</div>
+							<div class="form-group">
+								<label>Adresse :</label>
+								<div class="row">
+									<div class="col-md-6 col-padding-right-off">
+										{{form_widget(form.houseNumber , {"attr" : {
+											"class" : "form-control",
+											"placeholder" : "Nom et N° de la Rue"
+										}})}}										
+									</div>
+									<div class="col-md-6 col-padding-left-off ">
+										{{form_widget(form.city , {"attr" : {
+											"class" : "form-control",
+											"placeholder" : "Nom de Ville"
+										}})}}										
+									</div>
+									<div class="vertical-spacing"></div>
+									<div class="col-md-6 col-padding-right-off">
+										{{form_widget(form.zipCode , {"attr" : {
+											"class" : "form-control",
+											"placeholder" : "Code postal"
+										}})}}										
+									</div>
+									<div class="col-md-6 col-padding-left-off ">
+										{{form_widget(form.country , {"attr" : {
+											"class" : "form-control",
+											"placeholder" : "Pays"
+										}})}}
+									</div>
+									<div class="col-md-12 col-padding-left-off ">
+										{{form_widget(form.geoLocation , {"attr" : {
+											"class" : "form-control",
+											"placeholder" : "Geolocation"
+										}})}}
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								{{form_label(form.email , "Email :")}}
+								{{form_widget(form.email , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							<div class="form-group">
+								<label>Numéros de Téléphone :</label>
+								<div class="row">
+									<div class="col-md-6 col-padding-right-off">
+										{{form_widget(form.phoneMobile, {"attr" : {
+											"class" : "form-control",
+											"placeholder" : "Portable"
+										}})}}
+									</div>
+									<div class="col-md-6 col-padding-left-off">
+										{{form_widget(form.phoneLandline, {"attr" : {
+											"class" : "form-control",
+											"placeholder" : "Fixe"
+										}})}}
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								{{form_label(form.dateOfBirth , "Date de Naissance :")}}
+								{{form_widget(form.dateOfBirth , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							<div class="form-group">
+								{{form_label(form.profession , "Profession :")}}
+								{{form_widget(form.profession , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							<div class="form-group">
+								{{form_label(form.comment , "Note :")}}
+								{{form_widget(form.comment , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							<div class="form-group">
+								{{form_label(form.registeredDate , "Enregistrement le :")}}
+								{{form_widget(form.registeredDate , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							<div class="form-group">
+								{{form_label(form.lastUpdate , "Mise à Jour le :")}}
+								{{form_widget(form.lastUpdate , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							<div class="form-group">
+								{{form_label(form.avatar , "Veuillez choissir un avatar :")}}
+								{{form_widget(form.avatar , {"attr" : {
+									"class" : "form-control"
+								}})}}
+							</div>
+							<div class="form-group">
+								{{form_widget(form.submit , {"attr" : {
+									"class" : "btn btn-primary right pull-right",
+								}})}}
+							</div>
+						{{form_end(form)}}
+					</div>
+				</div>
+			</div>
+			<div class="panel-footer">
+				{% block errMessage %}
+					{{parent()}}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
